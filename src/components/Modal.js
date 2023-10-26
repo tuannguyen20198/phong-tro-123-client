@@ -20,7 +20,7 @@ const Modal = ({ setIsShowodal, content, name, handleSubmit, queries, arrMinMax,
       activedTrackEl.style.right = `${100 - persent2}%`;
     }
     }
-  });
+  },[persent1,persent2]);
   const handleClickStack = (e, value) => {
     e.stopPropagation();
     const strackEl = document.getElementById("track");

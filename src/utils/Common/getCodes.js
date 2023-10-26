@@ -15,7 +15,6 @@ export const getCodeArea = (totals, min, max) => {
   let arr = []
   return totals?.map(item => {
     let arrMaxMin = getNumbersArea(item.value)
-
     return ({
       ...item,
       min: arrMaxMin?.length === 2 ? arrMaxMin[0] : arrMaxMin[0] === min ? 0 : arrMaxMin[0] ,
