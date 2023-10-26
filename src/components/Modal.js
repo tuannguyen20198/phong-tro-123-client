@@ -232,7 +232,7 @@ const Modal = ({ setIsShowodal, content, name, handleSubmit, queries, arrMinMax,
                       key={item.code}
                       onClick={() => handleActive(item.code, item.value)}
                       className={`px-4 py-2 bg-gray-200 rounded-md cursor-pointer ${
-                        item.code === activedEl ? "bg-blue-500 text-white" : ""
+                        item.code === activedEl ? "bg-orange-500 text-white" : ""
                       }`}
                     >
                       {item.value}
