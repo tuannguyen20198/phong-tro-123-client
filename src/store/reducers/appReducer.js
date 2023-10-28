@@ -15,6 +15,11 @@ const appReducer = (state = initState, action) => {
         msg: action.msg || "",
       };
     case actionTypes.GET_PRICES:
+      console.log({
+        ...state,
+        prices: action.prices || [],
+        msg: action.msg || "",
+      })
       return {
         ...state,
         prices: action.prices || [],

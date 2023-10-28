@@ -15,14 +15,30 @@ const List = ({categoryCode}) => {
     for (let entry of searchParams.entries()) {
       params.push(entry);
     }
+    console.log("params",params)
     let searchParamsObject = {};
+    for(let i = 0 ; i < 0 ;i++){
+
+    }
+    console.log("searchParamsObject",searchParamsObject)
     params?.forEach(i => {
       if (Object.keys(searchParamsObject)?.some(item => item === i[0])) {
-        searchParamsObject[i[0]] = [...searchParamsObject[i[0]], i[1]]
+        searchParamsObject[i[0]] = [searchParamsObject[i[0]], i[1]]
       }else{
         searchParamsObject = {...searchParamsObject,[i[0]] : i[1]}
       }
     })
+    // params?.forEach(i => {
+    //   if (Object.keys(searchParamsObject)?.some(item => item === i[0])) {
+    //       let priceNew = i[1]
+    //       let key = i[0]
+    //       let price = searchParamsObject[key]
+    //       searchParamsObject[key] = [price, priceNew]
+    //   } else {
+    //       searchParamsObject = { ...searchParamsObject, [i[0]]: i[1] }
+    //   }
+    // })
+    console.log("searchParamsObject",searchParamsObject)
     if (categoryCode) searchParamsObject.categoryCode = categoryCode;
     if (sort === 1) searchParamsObject.order = ['createdAt','DESC']
     dispatch(getPostsLimit(searchParamsObject));

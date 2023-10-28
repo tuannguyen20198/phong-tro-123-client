@@ -41,6 +41,7 @@ const Search = () => {
     setIsShowodal(true);
     setdefaultText(defaultText)
   };
+  console.log(prices)
   const handleSubmit = useCallback((e, query, arrMaxMin)=>{
     e.stopPropagation();
     setQueries(prev =>({...prev, ...query }))
@@ -65,6 +66,7 @@ const Search = () => {
           ? `giá ${queryTextObj.price}` 
           : ''} ${queryTextObj.area 
             ? `diện tích ${queryTextObj.area}` : ''} ` 
+    console.log("titleSearch",titleSearch)
     navigate({
       pathname: path.SEARCH,
       search: createSearchParams(queryCodesObj).toString(),
